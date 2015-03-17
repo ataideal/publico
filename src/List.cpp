@@ -33,26 +33,26 @@ List::~List()
 void List::adicionarCorNaLista(){
             QVariantMap Cor;
             int x;
-            char cor[20],hexa[20];
+            QString cor, hexa;
 
-            srand( (unsigned)time(NULL) );
+            srand( (unsigned) time(NULL) );
             x = 1 + (rand() % 5);
 
             if (x==1){
-                strcpy(cor,"Black");
-                strcpy(hexa,"#000000");
+                cor = "Black";
+                hexa = "#000000";
             }else if(x==2){
-                strcpy(cor,"Blue");
-                strcpy(hexa,"#0000FF");
+                cor = "Blue";
+                hexa = "#0000FF";
             }else if(x==3){
-                strcpy(cor,"Purple");
-                strcpy(hexa,"#800080");
+                cor = "Purple";
+                hexa = "#800080";
             }else if(x==4){
-                strcpy(cor,"Red");
-                strcpy(hexa,"#FF0000");
+                cor = "Red";
+                hexa = "#FF0000";
             }else{
-                strcpy(cor,"Green");
-                strcpy(hexa,"#008000");
+                cor = "Green";
+                hexa = "#008000";
             }
             Cor["Cor"] = cor;
             Cor["Hexa"] = hexa;

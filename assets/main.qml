@@ -43,23 +43,33 @@ Page {
         
         Container {
             ListView {
+                horizontalAlignment: HorizontalAlignment.Fill
                 dataModel:_listar.model
-                
                 listItemComponents: [
                     
                     ListItemComponent {
-                        type: "Cor"
-                        
-                        StandardListItem {
-                            title: "Cor"
+                        type: "item"
+                        Container {
+                            horizontalAlignment: HorizontalAlignment.Fill
+                            layout: DockLayout {
                             }
-                            
+                            preferredHeight: 80
+                            preferredWidth: 768
+                            background: Color.create(ListItemData.Hexa)
+                            Label {
+                                verticalAlignment: VerticalAlignment.Center
+                                horizontalAlignment: HorizontalAlignment.Center
+                                text: ListItemData.Cor
+                                textStyle.color: Color.White
+                            }
+                        }
                     }
                     
                     
                 ]
                 onTriggered: {
                     var selectedItem = dataModel.data(indexPath)
+                    console.log(selectedItem.Hexa);
                     page.hexa = selectedItem.Hexa
                     page.titleBar.title = selectedItem.Cor
                     push(page)

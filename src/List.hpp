@@ -16,8 +16,7 @@ using namespace bb::cascades;
 class List : public QObject
 {
     Q_OBJECT
-
-        Q_PROPERTY(GroupDataModel * model READ model NOTIFY onModelChanged);
+    Q_PROPERTY(GroupDataModel * model READ model NOTIFY onModelChanged);
 
 public:
 
@@ -31,7 +30,7 @@ public:
 private:
     GroupDataModel * m_model;
 
-    signals:
+signals:
     void onModelChanged();
 };
 
